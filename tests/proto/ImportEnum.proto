@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+enum ImportEnum {
+  ENUM_D = 0;
+  ENUM_E = 1;
+  ENUM_F = 2;
+}

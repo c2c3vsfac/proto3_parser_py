@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+import "ImportMessage.proto";
+import "ImportEnum.proto";
+
+message MyProto {
+
+    message EmbeddedMessage2 {
+      optional string message = 1;
+      int32 number = 2;
+      map<uint32, uint32> map_uint_uint = 3;
+      map<string, EmbeddedMessage> map_string_embedded_message = 4;
+      map<string, ImportMessage> map_string_import_message = 5;
+      map<string, ImportEnum> map_string_import_enum = 6;
+      repeated string repeated_string = 7;
+      repeated EnumMessage repeated_enum_message = 8;
+      repeated ImportMessage repeated_import_message = 9;
+    }
+  string name = 1;
+  uint32 length_uint32 = 2;
+  repeated string repeated_string = 3;
+  bool success = 4;
+  EnumMessage enum_message = 5;
+  EmbeddedMessage embedded_message = 6;
+  repeated EnumMessage repeated_enum_message = 7;
+  repeated ImportEnum repeated_import_enum = 8;
+  repeated EmbeddedMessage repeated_embedded_message = 9;
+  repeated ImportMessage repeated_import_message = 10;
+  float x = 11;
+  double y = 12;
+  map<string, uint32> map_string_int = 13;
+  map<string, string> map_string_string = 14;
+  map<string, ImportMessage> map_string_import_message = 15;
+  map<string, ImportEnum> map_string_import_enum = 16;
+  repeated bool repeated_bool = 17;
+  repeated uint32 repeated_uint = 18;
+  int32 length_int32 = 19;
+  int64 length_int64 = 20;
+  uint64 length_uint64 = 21;
+  sint64 length_sint64 = 22;
+  sint32 length_sint32 = 23;
+  fixed64 length_fixed64 = 24;
+  fixed32 length_fixed32 = 25;
+  sfixed32 length_sfixed32 = 26;
+  sfixed64 length_sfixed64 = 27;
+  bytes buffer = 28;
+  ImportEnum import_enum = 29;
+  ImportMessage import_message = 30;
+  EmbeddedMessage2 embedded_message2 = 31;
+}
+
+enum EnumMessage {
+  ENUM_A = 0;
+  ENUM_B = 1;
+  ENUM_C = 2;
+}
+
+
+message EmbeddedMessage {
+  oneof data {
+    string message = 1;
+    int32 number = 2;
+  }
+}
