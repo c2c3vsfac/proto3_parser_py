@@ -11,6 +11,8 @@
 
 运行proto2json.py，自动生成`packet_serialization.json`文件;
 
+调用proto3_parser的parse方法即可。
+
 ## 与google protobuf对比
 
 ### 结果/result
@@ -33,3 +35,7 @@ python parse 9350 package(s) cost 1.407989 second(s)
 python parse 9350 package(s) cost 1.368603 second(s)
 google protocol buffer parse 9350 package(s) cost 2.081040 second(s)
 ```
+
+## 其他
+
+欢迎补充测试内容
